@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+.body{
+    font-family: 'Poppins' !important;
+}
+.bg_container {
+    background-image: url('beach_bg.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.label_text{
+    color: rgb(255, 255, 255);
+}
+.forgot_text {
+    color: #da0000;
+}
+.forgot_text:hover{
+    color: #2db963;
+}
+.card_container {
+    width: 400px;
+    height: auto;
+    background-color: rgba(197, 197, 197, 0);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.user_icon {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.login_heading {
+    text-align: center;
+    color: rgb(0, 78, 141);
+}
+.login_button {
+    width: 50%;
+    padding: 10px;
+    background-color: #00eeff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+.login_button:hover {
+    transition: background-color 0.3s ease-in-out;
+    background-color: #0248a3;
+    font-family: inherit;
+    color: white;
+}
+
+.signup_text {
+    text-align: center;
+    margin: 30px 0 0 0;
+    color: lightgray;
+}
+
+.signup_link {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.signup_link:hover {
+    text-decoration: underline;
+    color: #2db963;
+}
