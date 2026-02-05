@@ -1,6 +1,18 @@
 import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
 import './Homepage.css';
 function Homepage() {
+    const [openDestination, setOpenDestination] = useState(false);
+    const [openTravelers, setOpenTravelers] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [value, setValue] = useState("");
+    const [openCheckIn, setOpenCheckIn] = useState(false);
+    const [openCheckOut, setOpenCheckOut] = useState(false);
+    const [checkInDate, setCheckInDate] = useState("");
+    const [checkOutDate, setCheckOutDate] = useState("");
+    const [adults, setAdults] = useState(1);
+    const [children, setChildren] = useState(0);
+    const [infants, setInfants] = useState(0);
     return <div>
         <div>
             <div className="bg_home_container">
@@ -24,35 +36,176 @@ function Homepage() {
                     </div>
 
                     <div className="search_card d-flex flex-row justify-content-center align-items-center gap-3">
-                        <select className="myselect">
-                            <option>Where to?</option>
-                            <option>Hydrabad</option>
-                            <option>Chennai</option>
-                            <option>Delhi</option>
-                        </select>
+                        <div
+                            style={{
+                                width: "200px",
+                                background: "white",
+                                padding: "10px 12px",
+                                borderRadius: "8px",
+                                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                                fontFamily: "Poppins",
+                                cursor: "pointer",
+                            }}
+                            onClick={() => setOpenDestination(!openDestination)}
+                        >
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignItems: "center",
+                                }}
+                            >
+                                <span>{value || "Where to?"}</span>
+                                <span>{open ? <i class="bi bi-chevron-up text-black fw-bold"></i> : <i class="bi bi-chevron-down text-black fw-bold"></i>}</span>
+                            </div>
 
-                        <select className="myselect">
-                            <option>Check in</option>
-                        </select>
+                            {openDestination && (
+                                <input
+                                    type="text"
+                                    placeholder="Enter Destination"
+                                    value={value}
+                                    onChange={(e) => setValue(e.target.value)}
+                                    style={{
+                                        width: "100%",
+                                        marginTop: "6px",
+                                        border: "none",
+                                        outline: "none",
+                                    }}
+                                    onClick={(e) => e.stopPropagation()} // so it doesn’t close while typing
+                                />
+                            )}
+                        </div>
+
+                        <div
+                            style={{
+                                width: "200px",
+                                background: "white",
+                                padding: "10px 12px",
+                                borderRadius: "8px",
+                                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                                fontFamily: "Poppins",
+                                cursor: "pointer",
+                            }}
+                            onClick={() => {
+                                setOpenCheckIn(!openCheckIn);
+                                setOpenCheckOut(false);
+                            }}
+                        >
+                            <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                <span>{checkInDate || "Check-in"}</span>
+                                <span>{openCheckIn ? <i class="bi bi-chevron-up text-black fw-bold"></i> : <i class="bi bi-chevron-down text-black fw-bold"></i>}</span>
+                            </div>
+
+                            {openCheckIn && (
+                                <input
+                                    type="date"
+                                    value={checkInDate}
+                                    onChange={(e) => setCheckInDate(e.target.value)}
+                                    style={{ width: "100%", marginTop: "6px", padding: "6px" }}
+                                    onClick={(e) => e.stopPropagation()}
+                                />
+                            )}
+                        </div>
+
+                        <div
+                            style={{
+                                width: "200px",
+                                background: "white",
+                                padding: "10px 12px",
+                                borderRadius: "8px",
+                                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                                fontFamily: "Poppins",
+                                cursor: "pointer",
+                            }}
+                            onClick={() => {
+                                setOpenCheckOut(!openCheckOut);
+                                setOpenCheckIn(false);
+                            }}
+                        >
+                            <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                <span>{checkOutDate || "Check-out"}</span>
+                                <span>{openCheckOut ? <i class="bi bi-chevron-up text-black fw-bold"></i> : <i class="bi bi-chevron-down text-black fw-bold"></i>}</span>
+                            </div>
+
+                            {openCheckOut && (
+                                <input
+                                    type="date"
+                                    value={checkOutDate}
+                                    min={checkInDate || undefined}
+                                    onChange={(e) => setCheckOutDate(e.target.value)}
+                                    style={{ width: "100%", marginTop: "6px", padding: "6px" }}
+                                    onClick={(e) => e.stopPropagation()}
+                                />
+                            )}
+                        </div>
 
 
-                        <select className="myselect">
-                            <option>Check Out</option>
-                        </select>
+                        <div
+                            style={{
+                                width: "200px",
+                                background: "white",
+                                padding: "10px 12px",
+                                borderRadius: "8px",
+                                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                                fontFamily: "Poppins",
+                                cursor: "pointer",
+                                position: "relative",
+                            }}
+                            onClick={() => setOpenTravelers(!openTravelers)}
+                        >
+                            <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                <span>{adults + children + infants} Travelers</span>
+                                <span>{open ? <i class="bi bi-chevron-up text-black fw-bold"></i> : <i class="bi bi-chevron-down text-black fw-bold"></i>}</span>
+                            </div>
 
-                        <select className="myselect">
-                            <option>Travels</option>
-                            <option>MakeMyTrip</option>
-                            <option>Yatra</option>
-                            <option>Cleartrip</option>
-                            <option>Goibibo</option>
-                            <option>EaseMyTrip</option>
-                            <option>Thomas Cook India</option>
-                            <option>SOTC Travel</option>
-                            <option>IRCTC Tourism</option>
-                            <option>Cox & Kings (classic name, tours)</option>
-                            <option>Club Mahindra Holidays</option>
-                        </select>
+                            {openTravelers && (
+                                <div
+                                    style={{
+                                        marginBottom: "8px",
+                                        padding: "8px",
+                                        background: "white",
+                                        borderRadius: "8px",
+                                        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                                        position: "absolute",
+                                        left: 0,
+                                        right: 0,
+                                        bottom: "100%",
+                                        zIndex: 10,
+                                    }}
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    {/* Adults */}
+                                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
+                                        <span>Adults</span>
+                                        <div>
+                                            <button type="button" className='decrement' onClick={(e) => { e.stopPropagation(); setAdults(Math.max(0, adults - 1)); }}><i class="bi bi-dash fw-bolder fs-4"></i></button>
+                                            <span style={{ margin: "0 8px" }}>{adults}</span>
+                                            <button type="button" className='increment' onClick={(e) => { e.stopPropagation(); setAdults(adults + 1); }}><i class="bi bi-plus fw-bolder fs-4"></i></button>
+                                        </div>
+                                    </div>
+
+                                    {/* Children */}
+                                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
+                                        <span>Children</span>
+                                        <div>
+                                            <button type="button" className='decrement' onClick={(e) => { e.stopPropagation(); setChildren(Math.max(0, children - 1)); }}><i class="bi bi-dash fw-bolder fs-4"></i></button>
+                                            <span style={{ margin: "0 8px" }}>{children}</span>
+                                            <button type="button" className='increment' onClick={(e) => { e.stopPropagation(); setChildren(children + 1); }}><i class="bi bi-plus fw-bolder fs-4"></i></button>
+                                        </div>
+                                    </div>
+
+                                    {/* Infants */}
+                                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                        <span>Infants</span>
+                                        <div>
+                                            <button type="button" className='decrement' onClick={(e) => { e.stopPropagation(); setInfants(Math.max(0, infants - 1)); }}><i class="bi bi-dash fw-bolder fs-4"></i></button>
+                                            <span style={{ margin: "0 8px" }}>{infants}</span>
+                                            <button type="button" className='increment' onClick={(e) => { e.stopPropagation(); setInfants(infants + 1); }}><i class="bi bi-plus fw-bolder fs-4"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                         <button className="btnn">Search &nbsp;<i class="bi bi-arrow-right"></i></button>
                     </div>
                 </div>

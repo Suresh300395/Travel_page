@@ -57,11 +57,19 @@ video {
     z-index: 0;
 }
 
-.myselect {
-    width: 200px;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+.decrement{
+    background-color: #ffffff;
+    color: #d8422f;
+    border-width: 0px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.increment{
+    background-color: #ffffff;
+    color: #177200;
+    border-width: 0px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .btnn {
