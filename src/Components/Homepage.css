@@ -1,0 +1,305 @@
+/* .bg_home_container {
+    background-image: url('bg_home.png');
+    height: 100vh;
+    background-size: cover;
+} */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center bottom;
+    z-index: -1;
+}
+
+/* .video-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+} */
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.home-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 0;
+}
+.search_card {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 6px;
+    height: auto;
+    width: max-content;
+    max-width: 95%;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.decrement{
+    background-color: #ffffff;
+    color: #d8422f;
+    border-width: 0px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.increment{
+    background-color: #ffffff;
+    color: #177200;
+    border-width: 0px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btnn {
+    height: 45px;
+    width: 130px;
+    background-color: #d8422f;
+    color: rgb(255, 255, 255);
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* 
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.divider span {
+    padding: 0px 12px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.divider .top_place {
+    padding: 0px 12px;
+    font-size: 15px;
+} */
+.sub-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.sub-title::before,
+.sub-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #9e9e9e;
+}
+
+
+.adveture_card {
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.adventure_title {
+    font-size: 21px;
+    font-weight: bold;
+    color: #0f45aa;
+}
+
+.adventure_text {
+    font-size: 16px;
+    color: #555555;
+}
+
+.adventure_img1 {
+    height: 70px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.adventure_img2 {
+    height: 70px;
+    width: 100px;
+    object-fit: auto;
+}
+
+.adventure_img3 {
+    height: 90px;
+    width: 90px;
+    object-fit: contain;
+}
+
+.explore_title {
+    font-weight: bold;
+    color: #0f45aa;
+}
+
+.destination_img {
+    height: 350px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.destination_card1, .destination_card2, .destination_card3, .destination_card4, .destination_card5 {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+    height: 350px;
+    width: 100%;
+    max-width: 250px;
+}
+
+.destination_card1 { background-image: url('destination1.jpg'); }
+.destination_card2 { background-image: url('destination2.jpg'); }
+.destination_card3 { background-image: url('destination3.jpg'); }
+.destination_card4 { background-image: url('destination4.jpg'); }
+.destination_card5 { background-image: url('destination5.jpg'); }
+
+.butnn {
+    height: 45px;
+    width: auto;
+    background-color: #1c4eaa;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+.why_Travel_Us {
+    background-color: #f1f1f1;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.why_title {
+    position: absolute;
+    transform: translate(200%, -250%);
+    font-size: 28px;
+    font-weight: bold;
+    background-color: #f1f1f1;
+}
+
+.Travel_us_card {
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width: 90%;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.trav_card {
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+}
+
+.trav_img {
+    height: 80px;
+    width: 100px;
+    object-fit: contain;
+}
+
+.trav_title {
+    color: #0f45aa;
+    font-weight: bold;
+}
+
+.trav_text {
+    color: #555555;
+    font-size: 14px;
+}
+
+@media (max-width: 992px) {
+    .search_card {
+        width: 90%;
+        top: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        height: auto;
+        min-height: 50vh;
+        padding-bottom: 350px; /* Increased space for the search card */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .home-content {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding-top: 50px;
+    }
+
+    .home-content .h1 {
+        font-size: 1.8rem;
+    }
+    .home-content .h5 {
+        font-size: 1.1rem;
+    }
+    
+    .search_card {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px;
+    }
+    
+    .search_card > div {
+        width: 100% !important;
+    }
+
+    .adveture_card {
+        max-width: 100%;
+    }
+}
+

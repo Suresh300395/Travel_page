@@ -1,0 +1,38 @@
+.logo-img {
+    height: 60px;
+    width: 60px;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+.nav-link{
+    color: #0f45aa !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+
+
+}
+.nav-link.active {
+  color: #9e0000 !important;
+  font-weight: bold;
+}
+
+.nav_btnn{
+    background-color: #0f45aa;
+    color:white;
+    height: 36px;
+    width: 80px;
+    border-width: 0px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.nav_btnn:hover{
+    background-color:#00c5bb;
+    color:aliceblue;
+    height: 36px;
+    width: 80px;
+    border-width: 0px;
+    border-radius: 5px;
+}
